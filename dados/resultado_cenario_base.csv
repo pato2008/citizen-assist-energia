@@ -1,0 +1,5 @@
+id,nome,renovavel,kwh_mes,kwh_ano,custo_mes_rs,custo_ano_rs,investimento_rs,manutencao_ano_rs,economia_bruta_ano_rs,economia_liquida_ano_rs,payback_anos,beneficio_liquido_horizonte_rs,co2_evitado_kg_ano,agua_economizada_l_mes
+A0,Situação atual: chuveiro elétrico,False,88.0,1056.0,96.8,1161.6,0.0,0.0,0.0,0.0,,0.0,0.0,0.0
+A1,Economia por hábito: banho mais curto,False,66.0,792.0,72.6,871.2,0.0,0.0,290.4,290.4,0.0,2904.0,6.5274,1200.0
+A2,Aquecedor solar com apoio elétrico,True,29.92,359.04,32.912,394.944,4500,45.0,766.656,721.656,6.2357,2716.56,17.2323,0.0
+A3,Banho mais curto + aquecedor solar,True,22.44,269.28,24.684,296.208,4500,45.0,865.392,820.392,5.4852,3703.92,19.4517,1200.0

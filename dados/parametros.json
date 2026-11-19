@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "descricao": "Parâmetros do módulo Energia do Citizen Assist AI (água quente do banho em residências). Cada parâmetro traz valor, unidade, tipo (público / estimado / premissa / calculado), origem e referência.",
+    "versao": "1.0",
+    "data_consulta_das_fontes": "2026-11-18",
+    "moeda": "BRL (R$)",
+    "periodo_de_referencia": "12 meses (ano típico); horizonte do retorno do investimento: 10 anos"
+  },
+  "referencias": {
+    "R1": {
+      "citacao": "IDEC. Economia com aquecedor solar. Publicado e atualizado em 17/04/2025.",
+      "url": "https://idec.org.br/dicas-e-direitos/economia-com-aquecedor-solar",
+      "acesso": "18/11/2026",
+      "usamos": "Faixa de preço de sistemas residenciais de baixa pressão (R$ 3.000 a R$ 6.000); retorno de 2 a 7 anos; vida útil do coletor (15 a 25 anos) e do boiler (10 a 15 anos); exemplo de chuveiro de 5.500 W; limite de 5 m entre a caixa d'água e o reservatório."
+    },
+    "R2": {
+      "citacao": "ALVES, G. M. S. et al. Estudo comparativo de sistemas residenciais de aquecimento de água. ReonUniFacema, v. 6, n. 1, 2022.",
+      "url": "https://unifacema.edu.br/storage/5213/ESTUDO-COMPARATIVO-DE-SISTEMAS-RESIDÊNCIAIS-DE-AQUECIMENTO-DE-ÁGUA.pdf",
+      "acesso": "18/11/2026",
+      "usamos": "Casa popular de 4 pessoas; chuveiro de 5.500 W; vazão de 5 L/min; consumo diário de 11 kWh (chuveiro elétrico) contra 3,75 kWh (solar com apoio elétrico), ou seja, redução de cerca de 66%; investimento do sistema solar de R$ 3.899 (tabelas de 2020)."
+    },
+    "R3": {
+      "citacao": "KOMECO. Datasheet - Coletor solar linha Maxime Prime (classificação PBE/Inmetro e energia mensal por coletor).",
+      "url": "https://www.komeco.com.br/arquivos/datasheet/aquecimento-solar/coletor-solar/datasheet-coletor-solar-linha-maxime-prime.pdf",
+      "acesso": "18/11/2026",
+      "usamos": "Coletor '1,5 Maxime': classe A, área externa 1,46 m², 121,4 kWh/mês por coletor; promessa de 'economia de até 70%' na conta (usada como limite superior, não como garantia)."
+    },
+    "R4": {
+      "citacao": "ELETROBRAS/PROCEL. Pesquisa de Posse e Hábitos de Uso de Equipamentos Elétricos na Classe Residencial (PPH 2019) - resultados do estado de São Paulo (período da pesquisa: jul/2018 a abr/2019).",
+      "url": "https://q.eletrobras.com/pt/AreasdeAtuacao/ESTADOS_SAO_PAULO.pdf",
+      "acesso": "18/11/2026",
+      "usamos": "Chuveiro elétrico (tabelas 362 a 367): faixa de tempo de banho mais comum 'de 6 a 10 minutos' (59,54% dos domicílios de SP) e média de 3,58 usos do chuveiro por dia por domicílio."
+    },
+    "R5": {
+      "citacao": "TELHANORTE. Chuveiro Elétrico Multitemperatura Maxi Ducha 5500W 220V Lorenzetti (especificações do produto).",
+      "url": "https://www.telhanorte.com.br/chuveiro-eletrico-multitemperatura-maxi-ducha-branco-5500w-220v-branco-lorenzetti-773174/p",
+      "acesso": "18/11/2026",
+      "usamos": "Potência nominal de 5.500 W (220 V) de um chuveiro elétrico comum."
+    },
+    "R6": {
+      "citacao": "JORNAL DO COMÉRCIO. Aneel: mês de novembro terá bandeira tarifária verde. 30/10/2026.",
+      "url": "https://www.jornaldocomercio.com/economia/2026/10/1268908-aneel-mes-de-novembro-tera-bandeira-tarifaria-verde.html",
+      "acesso": "18/11/2026",
+      "usamos": "Bandeira verde em novembro/2026 (sem cobrança adicional); a bandeira amarela custaria R$ 1,885 a cada 100 kWh. Fonte secundária: confirmar no site da ANEEL."
+    },
+    "R7": {
+      "citacao": "infoTARIFA, março/2026 (boletim hospedado por Cenário Energia). Tarifa residencial B1 - histórico e estimativa 2026.",
+      "url": "https://cenarioenergia.com.br/wp-content/uploads/2026/03/17032026_infoTARIFA_MAR_2026.pdf",
+      "acesso": "18/11/2026",
+      "usamos": "Tarifa média residencial B1 estimada para 2026: R$ 849/MWh sem tributos; ICMS médio de 18,0% e PIS/Cofins médio de 4,9% aplicados 'por dentro'. É um valor médio nacional: o da sua distribuidora pode ser diferente."
+    },
+    "R8": {
+      "citacao": "CANAL SOLAR. Emissões de CO2 da geração elétrica (dados do MCTI/SIRENE). 13/06/2025.",
+      "url": "https://canalsolar.com.br/emissoes-de-co%e2%82%82-geracao-eletrica-mcti/",
+      "acesso": "18/11/2026",
+      "usamos": "Fator médio de emissão da geração elétrica em 2025: 23,7 (jan), 24,8 (fev), 21,5 (mar) e 28,9 (abr) kg CO2/MWh. Usamos a média simples desses 4 meses."
+    }
+  },
+  "parametros": {
+    "pessoas": {
+      "valor": 4, "unidade": "pessoas", "tipo": "premissa",
+      "origem": "Cenário de referência: família de 4 pessoas (mesmo porte da casa popular do estudo R2).",
+      "ref": ["R2"]
+    },
+    "banhos_por_pessoa_dia": {
+      "valor": 1.0, "unidade": "banho/pessoa/dia", "tipo": "estimado",
+      "origem": "R4 indica média de 3,58 usos do chuveiro por dia por domicílio em SP; 1 banho por pessoa em uma família de 4 tem a mesma ordem de grandeza.",
+      "ref": ["R4"]
+    },
+    "minutos_por_banho": {
+      "valor": 8, "unidade": "min", "tipo": "estimado",
+      "origem": "Centro da faixa de 6 a 10 minutos, a mais comum em SP (R4).",
+      "ref": ["R4"]
+    },
+    "potencia_chuveiro_w": {
+      "valor": 5500, "unidade": "W", "tipo": "público",
+      "origem": "Potência nominal de chuveiro comum, na posição mais quente (R5, R1). Na posição 'verão' a potência é menor: usar 5.500 W é uma hipótese de consumo alto.",
+      "ref": ["R5", "R1"]
+    },
+    "dias_mes": {
+      "valor": 30, "unidade": "dias", "tipo": "premissa",
+      "origem": "Convenção de mês de 30 dias.",
+      "ref": []
+    },
+    "tarifa_sem_tributos_rs_kwh": {
+      "valor": 0.849, "unidade": "R$/kWh", "tipo": "público",
+      "origem": "Tarifa média residencial B1 estimada para 2026, sem tributos (R$ 849/MWh).",
+      "ref": ["R7"]
+    },
+    "icms_pct": {
+      "valor": 18.0, "unidade": "%", "tipo": "público",
+      "origem": "ICMS médio citado no boletim (R7).",
+      "ref": ["R7"]
+    },
+    "pis_cofins_pct": {
+      "valor": 4.9, "unidade": "%", "tipo": "público",
+      "origem": "PIS/Cofins médio citado no boletim (R7).",
+      "ref": ["R7"]
+    },
+    "bandeira_adicional_rs_100kwh": {
+      "valor": 0.0, "unidade": "R$/100 kWh", "tipo": "público",
+      "origem": "Bandeira verde em novembro/2026: sem acréscimo (R6). Na amarela seria R$ 1,885/100 kWh.",
+      "ref": ["R6"]
+    },
+    "minutos_por_banho_a1": {
+      "valor": 6, "unidade": "min", "tipo": "estimado",
+      "origem": "Alternativa A1 (hábito): limite inferior da faixa de 6 a 10 minutos mais comum (R4). Se a pessoa já toma banho mais curto, A1 não gera economia.",
+      "ref": ["R4"]
+    },
+    "reducao_solar_base": {
+      "valor": 0.66, "unidade": "fração", "tipo": "estimado",
+      "origem": "Redução do consumo elétrico do aquecimento de água com aquecedor solar e apoio elétrico: (11 - 3,75) / 11 = 0,659 no estudo R2, arredondada para 0,66.",
+      "ref": ["R2"]
+    },
+    "reducao_solar_min": {
+      "valor": 0.50, "unidade": "fração", "tipo": "estimado",
+      "origem": "Cenário conservador definido pela equipe (dias nublados, sistema mal orientado ou com sombra).",
+      "ref": []
+    },
+    "reducao_solar_max": {
+      "valor": 0.70, "unidade": "fração", "tipo": "público",
+      "origem": "'Economia de até 70%' declarada pelo fabricante (R3). É limite superior de propaganda, não garantia.",
+      "ref": ["R3"]
+    },
+    "investimento_solar_rs": {
+      "valor": 4500, "unidade": "R$", "tipo": "estimado",
+      "origem": "Valor central da faixa de R$ 3.000 a R$ 6.000 para sistemas residenciais de baixa pressão (R1). O estudo R2 usou R$ 3.899 (preços de 2020).",
+      "ref": ["R1", "R2"]
+    },
+    "investimento_solar_min": {
+      "valor": 3000, "unidade": "R$", "tipo": "público", "origem": "Limite inferior da faixa do IDEC (R1).", "ref": ["R1"]
+    },
+    "investimento_solar_max": {
+      "valor": 6000, "unidade": "R$", "tipo": "público", "origem": "Limite superior da faixa do IDEC (R1).", "ref": ["R1"]
+    },
+    "manutencao_solar_pct_ano": {
+      "valor": 1.0, "unidade": "% do investimento por ano", "tipo": "estimado",
+      "origem": "Sem valor publicado nas fontes: R1 apenas diz que o sistema exige 'pouca manutenção'. A equipe adotou 1% ao ano como reserva.",
+      "ref": ["R1"]
+    },
+    "vida_util_coletor_anos": {
+      "valor": 15, "unidade": "anos", "tipo": "público", "origem": "Faixa de 15 a 25 anos (R1); usamos o limite inferior.", "ref": ["R1"]
+    },
+    "vida_util_boiler_anos": {
+      "valor": 10, "unidade": "anos", "tipo": "público", "origem": "Faixa de 10 a 15 anos (R1); usamos o limite inferior.", "ref": ["R1"]
+    },
+    "horizonte_anos": {
+      "valor": 10, "unidade": "anos", "tipo": "premissa",
+      "origem": "Horizonte de comparação = vida útil mínima do boiler (R1), para não contar benefício além da vida útil do equipamento mais curto.",
+      "ref": ["R1"]
+    },
+    "pmee_coletor_kwh_mes": {
+      "valor": 121.4, "unidade": "kWh/mês por coletor", "tipo": "público",
+      "origem": "Coletor '1,5 Maxime', classe A (PBE/Inmetro), área externa 1,46 m² (R3). Usado só como teste de ordem de grandeza.",
+      "ref": ["R3"]
+    },
+    "fator_emissao_kg_co2_kwh": {
+      "valor": 0.024725, "unidade": "kg CO2/kWh", "tipo": "calculado",
+      "origem": "Média simples de jan-abr/2025: (23,7 + 24,8 + 21,5 + 28,9) / 4 = 24,725 kg/MWh (R8). É o fator MÉDIO da rede, não o marginal.",
+      "ref": ["R8"]
+    },
+    "vazao_chuveiro_l_min": {
+      "valor": 5, "unidade": "L/min", "tipo": "premissa",
+      "origem": "Vazão do chuveiro elétrico adotada no estudo R2.",
+      "ref": ["R2"]
+    },
+    "alerta_chuveiro_pct_da_conta": {
+      "valor": 0.60, "unidade": "fração", "tipo": "estimado",
+      "origem": "Heurística da equipe: se o chuveiro estimado passa de 60% do total da conta informada, o assistente pede para conferir potência, tempo e número de banhos.",
+      "ref": []
+    },
+    "altura_max_caixa_dagua_m": {
+      "valor": 5, "unidade": "m", "tipo": "público",
+      "origem": "Em sistemas de baixa pressão, a caixa d'água deve ficar a até 5 m de altura do reservatório (R1).",
+      "ref": ["R1"]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "consultar_energia",
+  "description": "Calcula quanto o chuveiro elétrico de uma casa consome e custa por ano e compara alternativas para a MESMA necessidade (banho quente): A0 situação atual, A1 banho mais curto, A2 aquecedor solar com apoio elétrico (renovável) e A3 = A1 + A2. Devolve números, recomendações, referências e limitações. Use sempre que a pessoa perguntar sobre conta de luz, chuveiro elétrico, economia de energia ou aquecedor solar. Não peça nem envie nome, endereço, CPF ou número de cliente.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "pessoas": {"type": "integer", "minimum": 1, "maximum": 12, "description": "Pessoas que moram na casa. Padrão: 4."},
+      "minutos_por_banho": {"type": "number", "minimum": 1, "maximum": 40, "description": "Duração média de um banho, em minutos. Padrão: 8."},
+      "banhos_por_pessoa_dia": {"type": "number", "minimum": 0.25, "maximum": 4, "description": "Banhos por pessoa por dia. Padrão: 1."},
+      "potencia_w": {"type": "number", "minimum": 1000, "maximum": 8500, "description": "Potência do chuveiro em watts (etiqueta do aparelho). Padrão: 5500."},
+      "tarifa_rs_kwh": {"type": "number", "minimum": 0.2, "maximum": 3.0, "description": "Valor do kWh na conta de luz, em reais, com tributos. Se ausente, usa a média estimada de 2026 (≈ 1,10)."},
+      "consumo_conta_kwh_mes": {"type": "number", "minimum": 20, "maximum": 2000, "description": "Consumo total do último mês na conta, em kWh (opcional; serve para checar se o resultado é coerente)."},
+      "pode_instalar": {"type": "boolean", "description": "A pessoa é dona do imóvel ou tem autorização para instalar equipamento no telhado? Padrão: true."},
+      "tem_sol_no_telhado": {"type": "boolean", "description": "O telhado/laje tem sol direto na maior parte do dia, sem sombra? Padrão: true."}
+    },
+    "required": []
+  }
+}

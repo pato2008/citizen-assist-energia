@@ -1,0 +1,3 @@
+# O assistente e os testes usam apenas a biblioteca padrão do Python (3.8 ou mais novo).
+# matplotlib é necessário só para regenerar os gráficos: python scripts/gerar_resultados.py
+matplotlib>=3.5
